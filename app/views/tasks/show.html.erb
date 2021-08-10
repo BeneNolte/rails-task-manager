@@ -1,0 +1,10 @@
+<h1>TASK MANAGER</h1>
+<li>Title:      <%= @task[:title] %></li>
+<li>Details:    <%= @task[:details] %></li>
+<li>Completed:  <%= @task[:completed] %></li>
+
+<p><%= link_to "Edit Task", task_edit_path %></p>
+<%= link_to "Delete Task",
+              task_path(@task),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
