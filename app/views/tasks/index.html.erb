@@ -1,6 +1,15 @@
 <h1>TASK MANAGER</h1>
+<ul>
 <% @tasks.each do |task| %>
-<li><%= link_to task[:title], task_path(task.id) %></li>
-<% end %>
+  <li>
+    <% if task.completed  %>
+      <i class="fas fa-check-square" id='icon'></i>
+    <% else %>
+      <i class="far fa-square" id='icon'></i>
+    <% end %>
+  </li>
+  <li><%= link_to task[:title], task_path(task.id) %></li>
+  <% end %>
+</ul>
 
 <p><%= link_to "(+) New Task", tasks_new_path %></p>
